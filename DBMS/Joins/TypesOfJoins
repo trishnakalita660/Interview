@@ -1,0 +1,65 @@
+JOINS IN SQL: 
+~~~~~~~~~~~~~
+ Joins in SQL are commands which are used to combine rows from 2/more tabbles based on a 
+ related column between those tables. They are predominantly used when a user is trying to extract data from tables 
+ which have one-to-many or many-to-many relationships between them.
+
+ 4 Types: 
+
+ 1. INNER JOINS:
+        returns those records/tuples which have matching values in both tables.
+
+        SELECT Table1.column1, Table1.column2, Table2.column1,...
+        FROM Table1
+        INNER JOIN
+        ON Table1.matchingColumnNAme = Table2.matchingColumnNAme;
+
+        EG: SELECT employee.EmpID, Project.ProjID
+        FROM employee
+        INNNER JOIN Project ON employee.EmpID=Project.EmpID  //employee.EmpID=Project.EmpID are matching on both tables 
+
+2. LEFT JOINS:
+        returns all the records from the left table and also those records which 
+        satisfy a condition from the right table. For records having no match, o/p will contain NULL values.
+
+        SELECT Table1.column1, Table1.column2, Table2.column1,...
+        FROM Table1
+        LEFT JOIN Table2
+        ON Table1.matchingColumnNAme = Table2.matchingColumnNAme;
+
+3. RIGHT JOINS:
+        returns all the records from the right table and also those records which 
+        satisfy a condition from the left table. For records having no match, o/p will contain NULL values.
+
+        SELECT Table1.column1, Table1.column2, Table2.column1,...
+        FROM Table1
+        RIGHT JOIN Table2
+        ON Table1.matchingColumnNAme = Table2.matchingColumnNAme;
+
+4. FULL JOINS:
+        returns all records which either have a match in left table or right table
+       
+        SELECT Table1.column1, Table1.column2, Table2.column1,...
+        FROM Table1
+        FULL JOIN Table2
+        ON Table1.matchingColumnNAme = Table2.matchingColumnNAme;
+
+        Full join = Left join Union right join
+
+
+---> Natural Joins
+---> many to many relationship mapping is done by using 2 joins statements!
+---> Hash Joins: 
+    `````````````
+       Hash Joins are type of joins which are used to join large tables or in an instance where the 
+       user wants most of the joined table rows.
+
+       It is a 2 step Algorithm:
+       1. Build Phase: Create in-memory  hash index on the left side of input
+       2. Probe Phase: Go through right side of input each row at a time ans find matches using the index created in
+                       build phase.
+---> Self Join: It is a join of a table to itself. 
+           --> each row in table is joined within itself.
+---> Cross Join: join clause is applied to each row of a table to every row of other table.
+           --> when WHERE is used, this type of join behaves as inner join and when WHERE is not present
+               it behaves as cartesian product. 
