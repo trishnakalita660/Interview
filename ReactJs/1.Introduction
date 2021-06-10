@@ -1,0 +1,54 @@
+What exactly is REACT?
+-> Well Well, react is an open source library created and deployed back in 2011
+  on Facebook's News Feed by one of their software engineer (obviously, duh..!I didnot even know about facebook's exixtence back then).
+  Anyway, the documentation defination goes like:  React is a front end Javascript library which is used for building user interfaces. It is basically used for handling view layer of mobile and web apps.
+
+SO, Why React?
+--> yeah yeah, there exists many other libraries like Angular, Vue! 
+   Not gonna bitch about their disadvantages, instead gonna brag about react's features!
+   
+   So, React has this amazing feature of using Virtual Dom (VD???Keep reading), which makes it faster
+   since RealDOM manipulations are expensive.
+   Again, everything in react are components (I get to hear this a lot from my brother!)
+
+COMPONENTS??   
+ Components are reusable piece of code that tells what should be rendered on the screen.
+ These are like JS functions but works in isolation and cleverly returns a HTML by its render() function.)
+ React has got 2 type of components: Class based and fuctional based.
+ -> Now a days fuctional components are preferred because of introduction of react hooks! (shanti! gonna talk about it later)
+
+ until hooks were introduced, functional components were stateless components and that's what class-based components got the advantage. 
+ (There will be a seperate note talking about the class based and functional based components and how it handles states and various lifecycles!)
+ 
+ **** ANNOYING MISCONCEPTION ( heard more than 3 times from the juniors)*****
+   "Class based components Uses HOOKS" 
+  --> No they donot! HOOKS COMES WITH FUNCTIONAL COMPONENTS ONLY! why do you think the react developers has hell lot of time to waste to create something that already exist for the class based components?(aisehi, sexy laga?)
+  ***********************************************************
+
+
+*** WHAT IS VIRTUAL DOM AND HOW DOES REACT WORKS?***
+
+Well the main difference is Virtual DOM resides in the memory, while Real DOM is in browser.
+
+Virtual DOM is the virtual representation of the real DOM which is synced with the realDOM using 
+library such as ReactDOM.
+This concept of virtual DOM was introduced because DOM manipulation being an integral part of web applications is
+slow compared to other JS operations. Thus the efficiency of the web page gets affected with increase in number of DOM manipulation.
+Also most JS frameworks updates the entire DOM for even slightest change.(This is also known as inefficient updating).
+
+***********HOW DOES VIRTUALDOM WORKS THEN?********
+ for every dom there is corresponding virtual dom object, and this object has similar properties. 
+ any changes in the virtual DOM is not reflected in the screen and that is how virtual dom differs from real dom.
+  So the question comes up why is changes made is virtual dom is faster than real one?  this is because real dom is the one that stays in the browser and virtual dom in its local memory. 
+
+
+So, now I feel you can figure out why React is fast!
+-->  yes, React uses 2 virtual DOMs to render its interfaces, one of which stores the current state of the object and
+other one stores the previous state.  
+Whenever the virtual DOM gets updated, react compares these 2 virtual DOMs and gets to know about which virtual DOM objects were updated.
+After knowing which objects were updated, react renders only those objects inside the real DOM instead of rendering the complete real DOM and this is what makes it faster.
+
+(so if you are reading this,from now on don't come up with stupid answers like react has greater community support so its faster and widely used.)
+
+
+
